@@ -58,14 +58,14 @@ public class UDPReceive : MonoBehaviour {
     // OnGUI
     void OnGUI()
     {
-        // Rect rectObj=new Rect(40,10,200,400);
-        //     GUIStyle style = new GUIStyle();
-        //         style.alignment = TextAnchor.UpperLeft;
-        // GUI.Box(rectObj,"# UDPReceive\n127.0.0.1 "+port+" #\n"
-        //             + "shell> nc -u 127.0.0.1 : "+port+" \n"
-        //             + "\nLast Packet: \n"+ lastReceivedUDPPacket
-        //             + "\n\nAll Messages: \n"+allReceivedUDPPackets
-        //         ,style);
+        Rect rectObj=new Rect(40,10,200,400);
+            GUIStyle style = new GUIStyle();
+                style.alignment = TextAnchor.UpperLeft;
+        GUI.Box(rectObj,"# UDPReceive\n127.0.0.1 "+port+" #\n"
+                    + "shell> nc -u 127.0.0.1 : "+port+" \n"
+                    + "\nLast Packet: \n"+ lastReceivedUDPPacket
+                    // + "\n\nAll Messages: \n"+allReceivedUDPPackets
+                ,style);
     }
        
     // init
@@ -77,6 +77,7 @@ public class UDPReceive : MonoBehaviour {
 
         // define port
         port = 8051;
+        // port = 53;
  
         // status
         print("Sending to 127.0.0.1 : "+port);
@@ -99,6 +100,8 @@ public class UDPReceive : MonoBehaviour {
     private  void ReceiveData()
     {
  
+        // IPAddress ip = IPAddress.Parse("192.168.59.246");
+        // IPEndPoint serverep = new IPEndPoint(ip, port);
         client = new UdpClient(port);
         while (true)
         {
@@ -111,8 +114,9 @@ public class UDPReceive : MonoBehaviour {
  
                 // Bytes mit der UTF8-Kodierung in das Textformat kodieren.
                 string text = Encoding.UTF8.GetString(data);
+                Debug.Log("Received: " + text);
 
-                loader.server = "http://127.0.0.1:1234";
+                loader.server = Settings.ServerAddress;
                 loader.BeginDownload(text);
  
                 // Den abgerufenen Text anzeigen.
@@ -139,5 +143,12 @@ public class UDPReceive : MonoBehaviour {
         // allReceivedUDPPackets="";
         return lastReceivedUDPPacket;
     }
+    void OnDisable() 
+    { 
+        if ( receiveThread!= null) 
+        receiveThread.Abort(); 
+
+        client.Close(); 
+    } 
 }
  
