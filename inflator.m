@@ -1,11 +1,15 @@
 function inflator(filename, out)
+% filename='input_sketches/fish.png';
+% out='fish_mine.obj';
+% color_out = 'color-fish_mine.txt';
 % % Reading the input (RGB) image
 image = imread(filename);
 
-% Resizing the image to a fixed height of 600px
+% Resizing the image to a fixed height of 300px
 [x,y,z] = size(image);
-image = imresize(image, [300, 300*(y/x)]);
-
+image = imresize(image, [225, 225*(y/x)]);
+% figure;
+% imshow(image);
 % % RGB to Grayscale
 gray_image = rgb2gray(image);
 
@@ -95,14 +99,13 @@ y = 1:size(height, 2);
 
 % Combine top and bottom with a shift to compensate for thresholding
 % % Texture map the now formed 3D surface using the information from the given 2D sketch
-figure;
-h = warp([X;X], [Y;Y], [height - (1.2*threshold); -height + (1.2*threshold)], [image; image]); axis equal;
+
+% figure;
+% shading flat;
+h = warp([X;X], [Y;Y], [height - (1.2*threshold); -height + (1.2*threshold)], [image; image]);
+% axis equal;
 
 % % Exporting this 3D model as STL or OBJ file (which can now be imported
 % % into Unity 3D.
 
-% h.FaceNormals
-% h.VertexNormals
-% saveobjmesh(out, h.XData, h.YData, h.ZData, h.VertexNormals);
-% surf2stl('banana.stl', h.XData, h.YData, h.ZD ata, h.CData);
-% stlwrite(h, 'bana.stl');
+save_obj(out, h.XData, h.YData, h.ZData, h.VertexNormals, h.CData);
