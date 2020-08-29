@@ -11,7 +11,15 @@ Refer the [report](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/blob/ma
 ## Contents
 * `UnityProject/` - contents of the unity application (which runs on the client).
 * `input_sketches/` - `.png` images to 2D objects used as input to the application.
-* `results/` - contains the 3D models, their screenshots and demo related gifs.
+* `results/` - contains the 3D models, their screenshots, app screenshots and demo gifs.
 * `scripts/` - contains the inflation and mesh generation (2D to 3D model conversion) and the server side scripts.
 
 ## Results
+### Inflation (2D to 3D conversion)
+![shopping-basket-inflation](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/tree/master/results/gifs/shopping-basket-inflation.gif) ![tomato-inflation](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/tree/master/results/gifs/tomato-inflation.gif)
+
+### A sample 3D scene
+![sample-scene](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/blob/master/results/app_screenshots/Scene%20Screensot%20-%20Finalapp.png)
+
+### Application Demo
+![app-demo](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/tree/master/results/gifs/app-demo.gif)
