@@ -16,7 +16,7 @@ Refer the [report](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/blob/ma
 
 ## Results
 ### Sample 3D scene
-![sample-scene](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/blob/master/results/app_screenshots/Scene%20Screensot%20-%20Finalapp.png)
+![sample-scene](results/app_screenshots/Scene%20Screensot%20-%20Finalapp.png)
 
 ### Inflation (2D to 3D conversion)
 ![shopping-basket-inflation](results/gifs/shopping_basket_inflation.gif)
