@@ -16,7 +16,7 @@ Refer the [report](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/blob/ma
 
 ## Results
 ### Inflation (2D to 3D conversion)
-![shopping-basket-inflation](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/tree/master/results/gifs/shopping-basket-inflation.gif) ![tomato-inflation](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/tree/master/results/gifs/tomato-inflation.gif)
+![shopping-basket-inflation](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/tree/master/results/gifs/shopping_basket_inflation.gif) ![tomato-inflation](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/tree/master/results/gifs/tomato_inflation.gif)
 
 ### A sample 3D scene
 ![sample-scene](https://github.com/divyanshu-talwar/ShakaLakaBoomBoom/blob/master/results/app_screenshots/Scene%20Screensot%20-%20Finalapp.png)
